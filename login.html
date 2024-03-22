@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProntoJá - Entrar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+        }
+        .left-side {
+            flex: 4;
+            padding: 50px;
+            background-color: #fff;
+        }
+        .right-side {
+            flex: 6;
+            background-color: #e8f7e5;
+            padding: 50px;
+        }
+        img.logo {
+            max-width: 100px;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .eye-icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+        button {
+            padding: 15px 30px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+        }
+        p.notification {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <img src="caminho_da_sua_imagem.png" alt="Logo ProntoJá" class="logo">
+            <h2>ProntoJá</h2>
+            <p>Entrar no gerenciador</p>
+            <form action="#" method="post">
+                <label for="email">E-mail:</label><br>
+                <input type="text" id="email" name="email"><br><br>
+                <label for="senha">Senha:</label>
+                <div style="position:relative;">
+                    <input type="password" id="senha" name="senha">
+                    <img src="olho.png" alt="Mostrar Senha" class="eye-icon">
+                </div>
+            </form>
+            <p><a href="#">Esqueci minha senha</a></p>
+            <button type="submit">Entrar</button>
+            <p class="notification">Este site é protegido pelo reCAPTCHA e o Google. Privacidade e Uso de Dados & Termos de Uso se aplicam.</p>
+        </div>
+        <div class="right-side">
+            <img src="produto.png" alt="Imagem do Produto">
+            <h2>Gerencie seus pedidos</h2>
+            <p>E automatize o seu atendimento de verdade</p>
+            <img src="smartphone.png" alt="Simulação de pedido delivery">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProntoJá - Entrar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Adicionado para evitar rolagem */
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+        .left-side {
+            flex: 4;
+            padding: 50px;
+            background-color: #fff;
+        }
+        .right-side {
+            flex: 6;
+            padding: 50px;
+            background-color: #e8f7e5;
+            position: relative;
+            overflow: hidden; /* Adicionado */
+        }
+        .right-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #4CAF50; /* Alterado para verde */
+            z-index: -1;
+        }
+        img.logo {
+            max-width: 130px; <!--este aumenta o tamanho da logo ou qlqr outra imagem
+        }
+        img.product-image {
+            max-width: 100%; /* Ajustando para 100% */
+            height: auto;
+            margin-top: 60px; /* Deslocando a imagem três linhas para baixo */
+        }
+        input[type="text"],
+        input[type="password"],
+        button[type="submit"] {
+            width: 90%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 21px;
+        }
+        .eye-icon {
+            position: absolute;
+            right: 23px;  /* este muda a posição do botão "mostrar senha" */
+            top: 2%;      /* este muda a posição do botão "mostrar senha" */
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 9px; /* Ajustando o tamanho da fonte para 9 */
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto 50px 5%; /* Ajustado para alinhar à esquerda e adicionar margem à direita */
+            width: 90%; /* Ajustado para 90% para manter a mesma largura das caixas de entrada */
+            transition: background-color 0.3s; /* Transição para a cor de fundo */
+        }
+        button:hover {
+            background-color: #0056b3; /* Cor mais escura ao passar o mouse */
+        }
+        button:active {
+            background-color: #003d80; /* Cor ainda mais escura ao clicar */
+        }
+        p.notification {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.8em;
+        }
+
+        /* Estilo para o texto acima da imagem */
+        .text-above-image {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: #007bff; /* Azul claro */
+        }
+
+        /* Media Queries */
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .left-side, .right-side {
+                flex: 1;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <center><img src="/Users/andersonsilcaetano/Documents/Aplicação Delivery/Versão 1/Logo ProntoJá.png" alt="Logo ProntoJá!" class="logo"></center>
+            <h2></h2>
+            <p><center><h3>Entrar no gerenciador</h3></center></p>
+            <form action="#" method="post">
+                <label for="email">E-mail:</label><br>
+                <input type="text" id="email" name="email"><br><br>
+                <label for="senha">Senha:</label>
+                <div style="position:relative;">
+                    <input type="password" id="senha" name="senha">
+                    <span class="eye-icon" id="togglePassword">
+                        <img src="olho.png" alt="Mostrar Senha">
+                    </span>
+                </div>
+            </form>
+            <p><a href="#">Esqueci minha senha</a></p>
+            <button type="submit">Entrar</button>
+            <p class="notification">Este site é protegido pelo reCAPTCHA e o Google.
+                <br><br>Privacidade e Uso de Dados & Termos de Uso se aplicam.</p>
+        </div>
+        <div class="right-side">
+            <img src="/Users/andersonsilcaetano/Documents/Aplicação Delivery/Versão 1/SmartphonegerenciePedido.png" alt="Imagem do Produto" class="product-image">
+            <div class="text-above-image">
+                <h2 style="color: #007bff;">Gerencie seus pedidos</h2>
+                <p style="color: #007bff;"><h4>E automatize o seu atendimento de verdade</h4></p>
+            </div>
+            <img src="smartphone.png" alt=>
+            <div class="right-bg"></div>
+        </div>
+    </div>
+
+   <!-- abaixo fo para tornar o botão "mostrar senha" funcional, você 
+    precisa adicionar um pouco de JavaScript para alternar entre os tipos 
+    de entrada de senha (password e text). Além disso, o ícone do olho (.eye-icon) deve ser envolvido
+     em uma tag span para permitir que ele seja clicável-->
+
+    <script>
+        const togglePassword = document.getElementById('togglePassword');
+        const senhaInput = document.getElementById('senha');
+
+        togglePassword.addEventListener('click', function() {
+            const type = senhaInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            senhaInput.setAttribute('type', type);
+        });
+    </script>
+</body>
+</html>

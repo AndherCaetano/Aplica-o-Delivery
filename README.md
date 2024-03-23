@@ -1,1 +1,0 @@
-# Aplica-o-Delivery
